@@ -12,7 +12,12 @@ import { ServersComponent } from './servers/servers.component';
     ServersComponent
 ],  // standalone 컴포넌트를 직접 임포트
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  // styleUrls: ['./app.component.css']
+  styles: [`
+    h3{
+      color: dodgerblue;
+    }
+    `]
 })
 export class AppComponent {
   name = 'kim';
