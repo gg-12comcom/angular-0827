@@ -1,2 +1,16 @@
-<app-server></app-server>
-<app-server></app-server>
+<label>Server name</label>
+<input
+    type="text"
+    class="from-control"
+    [(ngModel)]="serverName"> <!-- 이 줄을 추가 -->
+<!-- <p>{{ serverName }}</p> -->
+<button 
+    class="btn btn-primary"
+    [disabled]="!allowNewServer"
+    (click)="onCreateServer()">Add Server</button>
+    <p></p> 
+    <!-- <p>를 넣어 input 뒤에 문구가 붙는 걸 방지  -->
+<p *ngIf="serverCreated else noServer">{{ serverCreationStatus }}</p>
+<ng-template #noServer>No server was created!</ng-template>
+<app-server *ngFor="let server of servers"></app-server>
+

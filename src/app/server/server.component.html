@@ -1,1 +1,6 @@
-<p>The Server Component</p>
+<p 
+    [ngStyle]="{'background-color': getColor() }"
+    [ngClass]="{online: serverStatus === 'online'}">
+    {{ 'server' }} with ID {{ serverId }} is {{ getServerStatus() }}
+  </p>
+<!-- 색상 반영을 위해  imports: [CommonModule], 를 ts에 추가한다 -->
